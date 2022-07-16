@@ -260,3 +260,13 @@ figure
 subplot(1, 1, 1)
 plot( [ x(mapped_tib1, 5) x( mapped_tib2, 5) x( mapped_tib3, 5) x( mapped_tib4, 5) x( mapped_tib5, 5) ], [ J1(10) J2(10) J3(10) J4(10) J5(10) ], 'ko')
 ylabel('ATP Util'),xlabel('ATP Tank Level')
+subplot(1, 3, 2)
+% to change tank level argument, change column arg in x() array ie
+% x(something, 5) -> x(something, 4)
+plot( [ x(mapped_tib1, 4) x( mapped_tib2, 4) x( mapped_tib3, 4) x( mapped_tib4, 4) x( mapped_tib5, 4) ], [ J1(10) J2(10) J3(10) J4(10) J5(10) ], 'ko')
+ylabel('ATP Util'),xlabel('Delta P')
+subplot(1, 3, 3)
+% to change flux type, change column arg in J() array ie
+% J1(10) -> J1(6)
+plot( [ x(mapped_tib1, 4) x( mapped_tib2, 4) x( mapped_tib3, 4) x( mapped_tib4, 4) x( mapped_tib5, 4) ], [ J1(6) J2(6) J3(6) J4(6) J5(6) ], 'ko')
+ylabel('Proton Leak'),xlabel('Delta P')
