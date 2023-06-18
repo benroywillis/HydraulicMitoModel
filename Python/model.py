@@ -40,8 +40,17 @@ def EnergySens():
 	param[3] = 0.05*param[3]
 
 	# experiments
-	sol = scipy.integrate.solve_ivp(M.metabolites, [0, 600], xo, args=[param])
+	# solver methods really matter here 
+	# doc page: https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html
+	# "RK45" (default) becomes unstable after like 3 iterations
+	# "RK23" simulates successfully be takes forever because it uses really small step sizes. Tank levels don't change at all
+	# "DOP853": unstable after about a dozen iterations
+	# "Radau": completes in reasonable time, tank levels change when given sufficient time
+	# "BDF": completes in reasonable time, tank levels change when given sufficient time
+	# "LSODA": completes in reasonable time, tank levels change given sufficient time
+	sol = scipy.integrate.solve_ivp(M.metabolites, [0, 600], xo, args=[param], method="LSODA")
 
-	print(sol.y[0])
+	print(sol.y[-1])
+	print(sol.success)
 
 EnergySens()
