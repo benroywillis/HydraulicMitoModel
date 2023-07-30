@@ -8,7 +8,6 @@ import openpyxl
 
 # Hydraulic model simulator includes 2 fuel sources, 6 tanks (fat, cho, Gr, Gh, ATP, PCR), and vATP that is energy sensitive
 def EnergySens():
-
 	# load from excel configuration file
 	wb = openpyxl.load_workbook(filename="HydraulicLoading.xlsx")
 	ws = wb.active
