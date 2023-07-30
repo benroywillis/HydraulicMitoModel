@@ -1,0 +1,27 @@
+
+Vcho: a "battery" 
+ - Rglycolysis is the internal resistance specific to the carbohydrate battery
+ - delivering energy through glycolysis, ETC and cvant resistors (these are the internal resistances of the battery)
+
+Vfat: a "battery" 
+ - beta ox is the internal resistance specific to the fat battery
+
+Rglyc: the internal resistance of the Vcho resistance
+ - equation:
+
+Roxphos: shorthand for writing (ETC+CVant) together
+ - it is common to the two fuels
+
+RCVant: variable with Vatp (the atp water level)
+ - 
+
+Rbox is constant
+
+Retc is constant
+
+Cpcr: the capacitance of the system
+ - models the entire system capacitance because the rest of capacitances are negligibly large
+
+Rmotor: this is the load resistor connected to the battery(ies)
+ - models any reaction that requires ATP
+ - example: contractile proteins
